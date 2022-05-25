@@ -1,0 +1,113 @@
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.22
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[32m[+][0m URL: http://10.38.1.118/prehistoricforest/ [10.38.1.118]
+[32m[+][0m Started: Wed May 25 03:08:45 2022
+
+Interesting Finding(s):
+
+[32m[+][0m Headers
+ | Interesting Entry: Server: Apache/2.4.18 (Ubuntu)
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[32m[+][0m XML-RPC seems to be enabled: http://10.38.1.118/prehistoricforest/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[32m[+][0m WordPress readme found: http://10.38.1.118/prehistoricforest/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[32m[+][0m The external WP-Cron seems to be enabled: http://10.38.1.118/prehistoricforest/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[32m[+][0m WordPress version 4.5.3 identified (Insecure, released on 2016-06-21).
+ | Found By: Rss Generator (Passive Detection)
+ |  - http://10.38.1.118/prehistoricforest/index.php/feed/, <generator>https://wordpress.org/?v=4.5.3</generator>
+ |  - http://10.38.1.118/prehistoricforest/index.php/comments/feed/, <generator>https://wordpress.org/?v=4.5.3</generator>
+
+[32m[+][0m WordPress theme in use: twentysixteen
+ | Location: http://10.38.1.118/prehistoricforest/wp-content/themes/twentysixteen/
+ | Last Updated: 2022-01-25T00:00:00.000Z
+ | Readme: http://10.38.1.118/prehistoricforest/wp-content/themes/twentysixteen/readme.txt
+ | [33m[!][0m The version is out of date, the latest version is 2.6
+ | Style URL: http://10.38.1.118/prehistoricforest/wp-content/themes/twentysixteen/style.css?ver=4.5.3
+ | Style Name: Twenty Sixteen
+ | Style URI: https://wordpress.org/themes/twentysixteen/
+ | Description: Twenty Sixteen is a modernized take on an ever-popular WordPress layout — the horizontal masthead ...
+ | Author: the WordPress team
+ | Author URI: https://wordpress.org/
+ |
+ | Found By: Css Style In Homepage (Passive Detection)
+ |
+ | Version: 1.2 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://10.38.1.118/prehistoricforest/wp-content/themes/twentysixteen/style.css?ver=4.5.3, Match: 'Version: 1.2'
+
+[32m[+][0m Enumerating Users (via Passive and Aggressive Methods)
+
+ Brute Forcing Author IDs -: |==============================================================================================================================================================================================================|
+
+[34m[i][0m User(s) Identified:
+
+[32m[+][0m tommy
+ | Found By: Author Posts - Author Pattern (Passive Detection)
+ | Confirmed By:
+ |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)
+ |  Login Error Messages (Aggressive Detection)
+
+[32m[+][0m richard
+ | Found By: Author Posts - Author Pattern (Passive Detection)
+ | Confirmed By:
+ |  Rss Generator (Passive Detection)
+ |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)
+ |  Login Error Messages (Aggressive Detection)
+
+[32m[+][0m tom
+ | Found By: Author Posts - Author Pattern (Passive Detection)
+ | Confirmed By:
+ |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)
+ |  Login Error Messages (Aggressive Detection)
+
+[32m[+][0m Tom Jr.
+ | Found By: Rss Generator (Passive Detection)
+
+[32m[+][0m Big Tom
+ | Found By: Rss Generator (Passive Detection)
+
+[32m[+][0m michelle
+ | Found By: Author Id Brute Forcing - Author Pattern (Aggressive Detection)
+ | Confirmed By: Login Error Messages (Aggressive Detection)
+
+[33m[!][0m No WPScan API Token given, as a result vulnerability data has not been output.
+[33m[!][0m You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
+
+[32m[+][0m Finished: Wed May 25 03:08:49 2022
+[32m[+][0m Requests Done: 61
+[32m[+][0m Cached Requests: 6
+[32m[+][0m Data Sent: 18.366 KB
+[32m[+][0m Data Received: 308.66 KB
+[32m[+][0m Memory used: 202.23 MB
+[32m[+][0m Elapsed time: 00:00:04
