@@ -1,0 +1,20 @@
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-10-28 13:10 EDT
+Nmap scan report for deathnote.vuln (10.10.10.10)
+Host is up (0.00038s latency).
+
+PORT   STATE  SERVICE  VERSION
+20/tcp closed ftp-data
+80/tcp open   http     Apache httpd 2.4.38 ((Debian))
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-enum: 
+|   /wordpress/: Blog
+|   /robots.txt: Robots file
+|   /wordpress/wp-login.php: Wordpress login page.
+|_  /manual/: Potentially interesting folder
+|_http-server-header: Apache/2.4.38 (Debian)
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+MAC Address: 08:00:27:B8:13:E4 (Oracle VirtualBox virtual NIC)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 27.49 seconds
