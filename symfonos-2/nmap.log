@@ -1,0 +1,98 @@
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-11-14 13:04 EST
+Nmap scan report for 10.10.10.17
+Host is up (0.00023s latency).
+Not shown: 65530 closed ports
+PORT    STATE SERVICE
+21/tcp  open  ftp
+22/tcp  open  ssh
+80/tcp  open  http
+139/tcp open  netbios-ssn
+445/tcp open  microsoft-ds
+MAC Address: 08:00:27:39:7F:11 (Oracle VirtualBox virtual NIC)
+
+Nmap done: 1 IP address (1 host up) scanned in 1.60 seconds
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-11-14 13:04 EST
+Nmap scan report for 10.10.10.17
+Host is up (0.00029s latency).
+
+PORT    STATE SERVICE     VERSION
+21/tcp  open  ftp         ProFTPD 1.3.5
+22/tcp  open  ssh         OpenSSH 7.4p1 Debian 10+deb9u6 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 9d:f8:5f:87:20:e5:8c:fa:68:47:7d:71:62:08:ad:b9 (RSA)
+|   256 04:2a:bb:06:56:ea:d1:93:1c:d2:78:0a:00:46:9d:85 (ECDSA)
+|_  256 28:ad:ac:dc:7e:2a:1c:f6:4c:6b:47:f2:d6:22:5b:52 (ED25519)
+80/tcp  open  http        WebFS httpd 1.21
+|_http-server-header: webfs/1.21
+|_http-title: Site doesn't have a title (text/html).
+139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp open  netbios-ssn Samba smbd 4.5.16-Debian (workgroup: WORKGROUP)
+MAC Address: 08:00:27:39:7F:11 (Oracle VirtualBox virtual NIC)
+Service Info: Host: SYMFONOS2; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+|_clock-skew: mean: 7h29m59s, deviation: 3h27m50s, median: 5h29m59s
+|_nbstat: NetBIOS name: SYMFONOS2, NetBIOS user: <unknown>, NetBIOS MAC: <unknown> (unknown)
+| smb-os-discovery: 
+|   OS: Windows 6.1 (Samba 4.5.16-Debian)
+|   Computer name: symfonos2
+|   NetBIOS computer name: SYMFONOS2\x00
+|   Domain name: \x00
+|   FQDN: symfonos2
+|_  System time: 2021-11-14T17:34:48-06:00
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2021-11-14T23:34:48
+|_  start_date: N/A
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 12.25 seconds
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-11-14 13:32 EST
+Nmap scan report for 10.10.10.17
+Host is up (0.00026s latency).
+
+PORT    STATE    SERVICE
+21/tcp  open     ftp
+|_sslv2-drown: 
+22/tcp  filtered ssh
+80/tcp  open     http
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-vuln-cve2011-3192: 
+|   VULNERABLE:
+|   Apache byterange filter DoS
+|     State: VULNERABLE
+|     IDs:  CVE:CVE-2011-3192  BID:49303
+|       The Apache web server is vulnerable to a denial of service attack when numerous
+|       overlapping byte ranges are requested.
+|     Disclosure date: 2011-08-19
+|     References:
+|       https://www.securityfocus.com/bid/49303
+|       https://seclists.org/fulldisclosure/2011/Aug/175
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192
+|_      https://www.tenable.com/plugins/nessus/55976
+139/tcp open     netbios-ssn
+445/tcp open     microsoft-ds
+MAC Address: 08:00:27:39:7F:11 (Oracle VirtualBox virtual NIC)
+
+Host script results:
+|_smb-vuln-ms10-054: false
+|_smb-vuln-ms10-061: false
+| smb-vuln-regsvc-dos: 
+|   VULNERABLE:
+|   Service regsvc in Microsoft Windows systems vulnerable to denial of service
+|     State: VULNERABLE
+|       The service regsvc in Microsoft Windows 2000 systems is vulnerable to denial of service caused by a null deference
+|       pointer. This script will crash the service if it is vulnerable. This vulnerability was discovered by Ron Bowes
+|       while working on smb-enum-sessions.
+|_          
+
+Nmap done: 1 IP address (1 host up) scanned in 82.80 seconds

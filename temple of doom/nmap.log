@@ -1,0 +1,10 @@
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-11-07 13:11 EST
+Nmap scan report for 10.10.10.15
+Host is up (0.000078s latency).
+Not shown: 65533 closed ports
+PORT    STATE SERVICE
+22/tcp  open  ssh
+666/tcp open  doom
+MAC Address: 08:00:27:E8:7A:15 (Oracle VirtualBox virtual NIC)
+
+Nmap done: 1 IP address (1 host up) scanned in 1.87 seconds
